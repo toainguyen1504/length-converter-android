@@ -83,7 +83,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="20dp">
 
                         <EditText
                             android:id="@+id/inputTop"
@@ -98,8 +99,8 @@
                             android:textColor="@color/white"
 
                             android:textColorHint="@color/white"
-                            android:textSize="60sp"
                             android:textCursorDrawable="@drawable/cursor_white"
+                            android:textSize="60sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -108,6 +109,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/unitSelectTop"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -116,7 +118,6 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="clip_vertical"
-                            android:layout_marginStart="24dp"
 
                             android:layout_marginTop="16dp"
                             app:layout_constraintEnd_toStartOf="@+id/unitTopTxt"
@@ -177,7 +178,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="20dp">
 
                         <EditText
                             android:id="@+id/inputBottom"
@@ -200,6 +202,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/unitSelectBottom"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -208,7 +211,6 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="clip_vertical"
-                            android:layout_marginStart="24dp"
 
                             android:layout_marginTop="16dp"
                             app:layout_constraintEnd_toStartOf="@+id/unitBottomTxt"
