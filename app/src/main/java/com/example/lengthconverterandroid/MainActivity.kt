@@ -45,19 +45,19 @@ class MainActivity : AppCompatActivity() {
 
             // convert back to meters
             val inMetre = when (fromUnit) {
-                "Metre (m)" -> inputValue
-                "Millimetre (mm)" -> inputValue / 1000
-                "Mile (dặm)" -> inputValue * 1609.34
-                "Foot (ft)" -> inputValue * 0.3048
+                "Metre" -> inputValue
+                "Millimetre" -> inputValue / 1000
+                "Mile" -> inputValue * 1609.34
+                "Foot" -> inputValue * 0.3048
                 else -> inputValue
             }
 
             // convert from meters to target unit
             val result = when (toUnit) {
-                "Metre (m)" -> inMetre
-                "Millimetre (mm)" -> inMetre * 1000
-                "Mile (dặm)" -> inMetre / 1609.34
-                "Foot (ft)" -> inMetre / 0.3048
+                "Metre" -> inMetre
+                "Millimetre" -> inMetre * 1000
+                "Mile" -> inMetre / 1609.34
+                "Foot" -> inMetre / 0.3048
                 else -> inMetre
             }
 

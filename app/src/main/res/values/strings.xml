@@ -1,13 +1,15 @@
 <resources>
     <string name="app_name">Length Converter</string>
+
     <string name="length_converter">Length Converter</string>
 
     <!-- Unit -->
-    <string name="unit_metre">Metre (m)</string>
-    <string name="unit_millimetre">Millimetre (mm)</string>
-    <string name="unit_mile">Mile (dặm)</string>
-    <string name="unit_foot">Foot (ft)</string>
+    <string name="unit_metre">Metre</string>
+    <string name="unit_millimetre">Millimetre</string>
+    <string name="unit_mile">Mile</string>
+    <string name="unit_foot">Foot</string>
     <string name="convert_button_desciption">Convert button desciption</string>
+    <string name="number_hint">Number...</string>
 
 
 </resources>

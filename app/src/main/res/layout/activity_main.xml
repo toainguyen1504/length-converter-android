@@ -11,12 +11,12 @@
         android:id="@+id/convertBtn"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/round_button_bg"
+        android:contentDescription="@string/convert_button_desciption"
+        android:elevation="8dp"
         android:padding="12dp"
         android:scaleType="fitXY"
-        android:elevation="8dp"
-        android:background="@drawable/round_button_bg"
-        android:contentDescription= "@string/convert_button_desciption"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/constraintLayout3"
@@ -67,14 +67,34 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
+                <TextView
+                    android:id="@+id/fromTag"
+                    android:layout_width="96dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/outline_light_tag"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="8dp"
+                    android:text="From"
+                    android:textColor="@color/light_blue"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
                 <LinearLayout
+                    android:id="@+id/linearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="100dp"
 
+                    android:layout_marginBottom="100dp"
                     android:orientation="horizontal"
                     android:paddingHorizontal="32dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -91,16 +111,16 @@
                             android:layout_width="200dp"
                             android:layout_height="72dp"
                             android:background="@drawable/input_underline_white"
-                            android:hint="1000000"
+                            android:hint="@string/number_hint"
                             android:inputType="text"
                             android:paddingBottom="6dp"
                             android:scrollHorizontally="true"
                             android:singleLine="true"
                             android:textColor="@color/white"
 
-                            android:textColorHint="@color/white"
+                            android:textColorHint="@color/white_hint"
                             android:textCursorDrawable="@drawable/cursor_white"
-                            android:textSize="60sp"
+                            android:textSize="40sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -119,7 +139,7 @@
                             android:layout_height="20dp"
                             android:layout_gravity="clip_vertical"
 
-                            android:layout_marginTop="16dp"
+                            android:layout_marginTop="20dp"
                             app:layout_constraintEnd_toStartOf="@+id/unitTopTxt"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -132,10 +152,10 @@
                             android:layout_height="0dp"
                             android:layout_gravity="clip_vertical"
                             android:layout_marginStart="8dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_marginTop="16dp"
                             android:text="@string/unit_millimetre"
                             android:textColor="@color/white"
-                            android:textSize="20sp"
+                            android:textSize="18sp"
                             app:layout_constraintStart_toEndOf="@+id/iconTop"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -158,18 +178,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/fromTag2"
+                    android:layout_width="96dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/outline_normal_tag"
+                    android:gravity="center"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="8dp"
+                    android:text="To"
+                    android:textColor="@color/blue"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <LinearLayout
+                    android:id="@+id/linearLayout2"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="100dp"
+                    android:layout_marginTop="140dp"
                     android:orientation="horizontal"
                     android:paddingHorizontal="32dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -186,13 +217,13 @@
                             android:layout_width="200dp"
                             android:layout_height="72dp"
                             android:background="@drawable/input_underline_purple"
-                            android:hint="1000"
+                            android:hint="@string/number_hint"
                             android:inputType="text"
                             android:paddingBottom="6dp"
                             android:textColor="@color/purple"
-                            android:textColorHint="@color/purple"
-                            android:textSize="60sp"
+                            android:textColorHint="@color/light_purple"
                             android:textCursorDrawable="@drawable/cursor_purple"
+                            android:textSize="40sp"
 
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -212,7 +243,7 @@
                             android:layout_height="20dp"
                             android:layout_gravity="clip_vertical"
 
-                            android:layout_marginTop="16dp"
+                            android:layout_marginTop="20dp"
                             app:layout_constraintEnd_toStartOf="@+id/unitBottomTxt"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -225,10 +256,10 @@
                             android:layout_height="0dp"
                             android:layout_gravity="clip_vertical"
                             android:layout_marginStart="8dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_marginTop="16dp"
                             android:text="@string/unit_metre"
                             android:textColor="@color/purple"
-                            android:textSize="20sp"
+                            android:textSize="18sp"
                             app:layout_constraintStart_toEndOf="@+id/iconBottom"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
