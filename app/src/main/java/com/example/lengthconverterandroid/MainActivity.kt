@@ -1,6 +1,7 @@
 package com.example.lengthconverterandroid
 
 import android.os.Bundle
+import android.text.InputFilter
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
@@ -11,6 +12,10 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity() {
+
+    private var lastClickTime: Long = 0
+    private val CLICK_INTERVAL = 1000
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,11 +30,31 @@ class MainActivity : AppCompatActivity() {
         val inputBottom = findViewById<EditText>(R.id.inputBottom)
         val convertBtn = findViewById<ImageButton>(R.id.convertBtn)
 
+        // validate input
+        val inputFilter = InputFilter { source, _, _, _, _, _ ->
+            // Regex: only accept (0-9) numbers and .
+            if (source.matches(Regex("[0-9.]*"))) {
+                source
+            } else {
+                ""
+            }
+        }
+        inputTop.filters = arrayOf(inputFilter)
+
         setupSelect(unitSelectTop, unitTopTxt)
         setupSelect(unitSelectBottom, unitBottomTxt)
 
         // handle convert btn
         convertBtn.setOnClickListener {
+            val currentTime = System.currentTimeMillis()
+
+            // limit click
+            if (currentTime - lastClickTime < CLICK_INTERVAL) {
+
+                return@setOnClickListener
+            }
+            lastClickTime = currentTime
+
             val inputStr = inputTop.text.toString()
 
             if (inputStr.isEmpty()) {
@@ -39,9 +64,7 @@ class MainActivity : AppCompatActivity() {
 
             val fromUnit = unitTopTxt.text.toString()
             val toUnit = unitBottomTxt.text.toString()
-
             val inputValue = inputStr.toDouble()
-
 
             // convert back to meters
             val inMetre = when (fromUnit) {
